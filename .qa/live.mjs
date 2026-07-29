@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({viewport:{width:1280,height:900}});
+const errs=[];
+p.on('console', m=>{ if(m.type()==='error') errs.push(m.text()); });
+p.on('pageerror', e=>errs.push('PAGEERROR: '+e.message));
+await p.goto('https://flas-tech.github.io/lifeprint/', {waitUntil:'networkidle'});
+await p.waitForTimeout(2500);
+await p.screenshot({path:'/home/user/workspace/live-landing.png'});
+console.log('TITLE:', await p.title());
+console.log('ERRORS:', errs.length? errs.join(' | ') : 'none');
+await b.close();
