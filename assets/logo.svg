@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" role="img" aria-label="LifePrint">
+  <rect x="3.5" y="3.5" width="41" height="41" rx="9" stroke="currentColor" stroke-width="2"/>
+  <path d="M14 34V14h6a7 7 0 0 1 0 14h-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+  <path d="M26 30c3.2-1.8 5-4 5-7a7 7 0 0 0-3-5.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".75"/>
+  <path d="M30.5 33.5c4-2.6 6.2-5.6 6.2-9.5a10.4 10.4 0 0 0-4-8.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".45"/>
+</svg>

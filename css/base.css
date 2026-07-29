@@ -1,0 +1,224 @@
+/* LifePrint — foundations: tokens, reset, base typography */
+
+:root {
+  /* --- ink & paper -------------------------------------------------- */
+  --paper: #faf7f1;
+  --paper-2: #f4efe6;
+  --paper-3: #ece5d8;
+  --card: #fffdf9;
+  --ink: #1c2a24;
+  --ink-2: #3d4f47;
+  --ink-3: #6b7d74;
+  --ink-4: #94a49b;
+  --hairline: #ddd4c4;
+  --hairline-strong: #c8bda8;
+
+  /* --- brand -------------------------------------------------------- */
+  --forest: #1f4034;
+  --forest-2: #2c5a48;
+  --forest-3: #3f7a63;
+  --sage: #dfe8df;
+  --sage-2: #c3d5c6;
+  --clay: #b4633f;
+  --clay-2: #d08a63;
+  --clay-tint: #f6e7de;
+  --accent: #1f4034;
+  --accent-ink: #fffdf9;
+
+  /* --- status ------------------------------------------------------- */
+  --ok: #2f6b4f;
+  --ok-tint: #e3efe6;
+  --moderate: #8a6d2f;
+  --moderate-tint: #f6eed9;
+  --occasional: #9a5a2c;
+  --occasional-tint: #f7e8db;
+  --avoid: #8f2f2a;
+  --avoid-tint: #f7e2e0;
+  --caution: #a8741c;
+  --caution-tint: #fbf0d9;
+  --stop: #8f2f2a;
+  --stop-tint: #f9e4e2;
+  --urgent: #7a1f1a;
+  --urgent-tint: #f6dcd9;
+  --info-tint: #e7eef4;
+  --info: #2b5878;
+
+  /* --- type --------------------------------------------------------- */
+  --display: "Fraunces", "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "Inter", "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.9rem;
+  --text-3xl: 2.5rem;
+  --text-hero: clamp(2.4rem, 5vw, 3.6rem);
+
+  /* --- space -------------------------------------------------------- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --s9: 96px;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(28, 42, 36, 0.06);
+  --shadow: 0 2px 10px rgba(28, 42, 36, 0.07), 0 1px 2px rgba(28, 42, 36, 0.05);
+  --shadow-lg: 0 18px 44px rgba(28, 42, 36, 0.12);
+  --ring: 0 0 0 3px rgba(63, 122, 99, 0.34);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 220ms;
+  --maxw: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s3);
+  color: var(--ink);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+h2 {
+  font-size: var(--text-xl);
+}
+h3 {
+  font-size: var(--text-md);
+  font-family: var(--ui);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 var(--s4);
+  max-width: 70ch;
+}
+
+a {
+  color: var(--forest-2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--clay);
+}
+
+small {
+  font-size: var(--text-xs);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: var(--s6) 0;
+}
+
+ul,
+ol {
+  margin: 0 0 var(--s4);
+  padding-left: 1.25em;
+}
+
+li {
+  margin-bottom: var(--s2);
+}
+
+code,
+kbd {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  background: var(--paper-3);
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--forest-3);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--forest);
+  color: var(--accent-ink);
+  padding: var(--s3) var(--s4);
+  z-index: 100;
+}
+.skip-link:focus {
+  left: var(--s4);
+  top: var(--s4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

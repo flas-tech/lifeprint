@@ -1,0 +1,238 @@
+/* LifePrint — book styles. Each theme is a real typographic + colour system,
+   mirrored by THEMES in js/pdf/export.js so the PDF matches the preview. */
+
+.book {
+  --bk-paper: #fffdf9;
+  --bk-ink: #1c2a24;
+  --bk-ink-soft: #5c6b64;
+  --bk-accent: #1f4034;
+  --bk-rule: #ddd4c4;
+  --bk-tint: #f1efe7;
+  --bk-display: var(--display);
+  --bk-body: var(--ui);
+  --bk-h-transform: none;
+  --bk-h-spacing: -0.01em;
+  --bk-body-size: 0.95rem;
+  --bk-leading: 1.62;
+  --bk-radius: 10px;
+
+  background: var(--bk-paper);
+  color: var(--bk-ink);
+  font-family: var(--bk-body);
+  font-size: var(--bk-body-size);
+  line-height: var(--bk-leading);
+}
+.book h2,
+.book h3,
+.book h4 {
+  font-family: var(--bk-display);
+  color: var(--bk-accent);
+  text-transform: var(--bk-h-transform);
+  letter-spacing: var(--bk-h-spacing);
+}
+.book .pill,
+.book .callout,
+.book .tbl-wrap,
+.book .journal-lines,
+.book .why {
+  border-radius: var(--bk-radius);
+}
+.book .tbl-wrap {
+  border-color: var(--bk-rule);
+  background: var(--bk-paper);
+}
+.book table.tbl th {
+  background: var(--bk-tint);
+  color: var(--bk-ink-soft);
+}
+.book table.tbl th,
+.book table.tbl td {
+  border-color: var(--bk-rule);
+}
+.book .book-chapter + .book-chapter,
+.book .chapter-tools {
+  border-color: var(--bk-rule);
+}
+.book .muted,
+.book .tiny {
+  color: var(--bk-ink-soft);
+}
+
+/* 1 — minimal */
+.book[data-theme="minimal"] {
+  --bk-display: var(--ui);
+  --bk-h-spacing: -0.02em;
+  --bk-accent: #23282b;
+  --bk-ink: #23282b;
+  --bk-paper: #ffffff;
+  --bk-rule: #e6e6e4;
+  --bk-tint: #f6f6f4;
+  --bk-radius: 4px;
+  --bk-leading: 1.68;
+}
+
+/* 2 — elegant serif */
+.book[data-theme="elegant"] {
+  --bk-display: "Fraunces", Georgia, serif;
+  --bk-body: "Newsreader", Georgia, serif;
+  --bk-accent: #3a2f26;
+  --bk-ink: #2b241e;
+  --bk-paper: #fdfaf3;
+  --bk-rule: #e0d5c2;
+  --bk-tint: #f4ecdd;
+  --bk-body-size: 1rem;
+  --bk-leading: 1.7;
+  --bk-radius: 3px;
+}
+
+/* 3 — modern wellness (default) */
+.book[data-theme="modern-wellness"] {
+  --bk-accent: #1f4034;
+  --bk-paper: #fffdf9;
+  --bk-tint: #e7efe8;
+  --bk-rule: #d8e0d6;
+  --bk-radius: 14px;
+}
+
+/* 4 — clinical */
+.book[data-theme="clinical"] {
+  --bk-display: var(--ui);
+  --bk-body: var(--ui);
+  --bk-accent: #1d3f5c;
+  --bk-ink: #1e252b;
+  --bk-ink-soft: #5a666f;
+  --bk-paper: #ffffff;
+  --bk-rule: #d3dbe1;
+  --bk-tint: #eaf0f5;
+  --bk-body-size: 0.9rem;
+  --bk-leading: 1.55;
+  --bk-radius: 3px;
+  --bk-h-transform: none;
+}
+.book[data-theme="clinical"] h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+}
+
+/* 5 — soft / feminine */
+.book[data-theme="feminine"] {
+  --bk-display: "Fraunces", Georgia, serif;
+  --bk-accent: #7d3f56;
+  --bk-ink: #3b2a31;
+  --bk-paper: #fffaf9;
+  --bk-rule: #f0dade;
+  --bk-tint: #fbecef;
+  --bk-radius: 18px;
+  --bk-leading: 1.66;
+}
+
+/* 6 — bold / masculine */
+.book[data-theme="masculine"] {
+  --bk-display: var(--ui);
+  --bk-accent: #16202a;
+  --bk-ink: #16202a;
+  --bk-paper: #fbfbfa;
+  --bk-rule: #cfd4d6;
+  --bk-tint: #e8ebec;
+  --bk-h-transform: uppercase;
+  --bk-h-spacing: 0.02em;
+  --bk-radius: 2px;
+}
+.book[data-theme="masculine"] h2 {
+  border-bottom: 3px solid var(--bk-accent);
+  padding-bottom: 6px;
+}
+
+/* 7 — athletic */
+.book[data-theme="athletic"] {
+  --bk-display: var(--ui);
+  --bk-accent: #123f2f;
+  --bk-ink: #14201b;
+  --bk-paper: #f7faf7;
+  --bk-rule: #cfdcd2;
+  --bk-tint: #dff0e2;
+  --bk-h-transform: uppercase;
+  --bk-h-spacing: 0.04em;
+  --bk-body-size: 0.92rem;
+  --bk-radius: 6px;
+}
+.book[data-theme="athletic"] table.tbl th {
+  color: #123f2f;
+  font-weight: 800;
+}
+
+/* 8 — luxury */
+.book[data-theme="luxury"] {
+  --bk-display: "Fraunces", Georgia, serif;
+  --bk-body: "Newsreader", Georgia, serif;
+  --bk-accent: #7a6231;
+  --bk-ink: #241f18;
+  --bk-ink-soft: #6a6152;
+  --bk-paper: #fdfbf5;
+  --bk-rule: #ddd0ae;
+  --bk-tint: #f5eeda;
+  --bk-body-size: 1rem;
+  --bk-h-spacing: 0.01em;
+  --bk-radius: 2px;
+  --bk-leading: 1.72;
+}
+.book[data-theme="luxury"] h2::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 1px;
+  background: var(--bk-accent);
+  margin: var(--s3) 0 0;
+}
+
+/* 9 — nature */
+.book[data-theme="nature"] {
+  --bk-display: "Fraunces", Georgia, serif;
+  --bk-accent: #4a5a2b;
+  --bk-ink: #2a3020;
+  --bk-paper: #fbfaf2;
+  --bk-rule: #dcdcc0;
+  --bk-tint: #eef0dc;
+  --bk-radius: 12px;
+}
+
+/* 10 — colorful */
+.book[data-theme="colorful"] {
+  --bk-display: var(--ui);
+  --bk-accent: #a13b6a;
+  --bk-ink: #29222c;
+  --bk-paper: #fffdfb;
+  --bk-rule: #ecd9e3;
+  --bk-tint: #fdeaf2;
+  --bk-radius: 16px;
+}
+.book[data-theme="colorful"] h3 {
+  color: #2b6a8a;
+}
+.book[data-theme="colorful"] table.tbl th {
+  background: #e6f2f7;
+  color: #22576f;
+}
+
+/* 11 — print-friendly black & white */
+.book[data-theme="print-bw"] {
+  --bk-display: var(--ui);
+  --bk-accent: #000000;
+  --bk-ink: #111111;
+  --bk-ink-soft: #444444;
+  --bk-paper: #ffffff;
+  --bk-rule: #999999;
+  --bk-tint: #f0f0f0;
+  --bk-radius: 0px;
+  --bk-leading: 1.52;
+}
+.book[data-theme="print-bw"] .pill {
+  background: #f0f0f0 !important;
+  color: #111 !important;
+  border: 1px solid #999;
+}
+.book[data-theme="print-bw"] .callout {
+  background: #f6f6f6 !important;
+  border-left-color: #111 !important;
+}
