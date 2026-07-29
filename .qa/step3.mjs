@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1280, height: 900 } });
+await p.goto('http://localhost:8811/lifeprint/index.html?scenario=hard&step=3');
+await p.waitForTimeout(450);
+await p.locator('.step-nav button', { hasText: 'Continue' }).first().click();
+await p.waitForTimeout(400);
+console.log('step:', await p.evaluate(() => window.LifePrint.state.currentStep));
+console.log('visible errors:', await p.locator('.err:not([hidden])').allTextContents());
+await p.screenshot({ path: '/home/user/workspace/qa-shots/gate-hard-step3.png', fullPage: true });
+await b.close();
