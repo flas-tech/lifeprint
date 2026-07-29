@@ -7,7 +7,7 @@
 <p align="center"><em>Answer questions. Get a printable, source-cited lifestyle book that is actually yours.</em></p>
 
 <p align="center">
-  <strong>Live demo:</strong> <a href="https://&lt;user&gt;.github.io/lifeprint/">https://&lt;user&gt;.github.io/lifeprint/</a><br>
+  <strong>Live demo:</strong> <a href="https://flas-tech.github.io/lifeprint/">https://flas-tech.github.io/lifeprint/</a><br>
   <sub>No build step · no backend · no API keys · nothing leaves your browser</sub>
 </p>
 
@@ -70,7 +70,7 @@ Three things make it different from a diet-plan generator:
 No install, no build, no dependencies to fetch.
 
 ```bash
-git clone https://github.com/<user>/lifeprint.git
+git clone https://github.com/flas-tech/lifeprint.git
 cd lifeprint
 python3 -m http.server 8000
 # open http://localhost:8000/
@@ -118,7 +118,7 @@ There is no server. There is no account. There is no analytics.
 1. Push the repository to GitHub.
 2. **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder
    `/ (root)`.
-3. Open `https://<user>.github.io/lifeprint/`.
+3. Open `https://flas-tech.github.io/lifeprint/`.
 
 The repository is already Pages-ready: `.nojekyll` is committed, every asset path is relative, and
 there is no build step or server dependency, so it works from a project subpath unchanged.
